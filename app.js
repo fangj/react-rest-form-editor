@@ -7,6 +7,9 @@ app.get('/', function (req, res) {
 
 app.use(express.static('dist'));
 
+var postDb = new nedb({ filename: 'postDb', autoload: true });
+app.use('/api/post', expressRestResource({ db: postDb }));
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });

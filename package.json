@@ -15,7 +15,9 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "~2.1.2",
+    "express-rest-resource": "0.0.1",
     "i18n-helper": "~1.1.1",
+    "nedb": "^1.8.0",
     "react-jsonschema-form": "^0.39.0",
     "react-mixin": "~1.7.0"
   }

@@ -1,6 +1,6 @@
 require('./PageDemo.less');
 import Form from "react-jsonschema-form";
-
+import RestFormEditor from '../../components/rest_form_editor';
 const schema = {
   title: "Todo",
   type: "object",
@@ -22,6 +22,7 @@ const formData = {
   done: true
 };
 
+const ThumbView=(props)=><div>thumb</div>;
 
 class PageDemo extends React.Component {
 
@@ -39,9 +40,12 @@ class PageDemo extends React.Component {
     render() {
         return (
             <div className="page-demo">
-                 <Form schema={schema}
+                 <RestFormEditor schema={schema}
                     uiSchema={uiSchema}
-                    formData={formData} />
+                    formData={formData} 
+                    url="/post"
+                    keyField="_id"
+                    thumb={ThumbView}/>
             </div>
         );
     }
