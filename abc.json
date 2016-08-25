@@ -1,0 +1,14 @@
+{
+    "name": "RestFormEditor",
+    "options": {
+        "type": "uxcore",
+        "template": "https://github.com/nowa-webpack/template-uxcore/archive/master.zip",
+        "npm": "npm",
+        "vars": {
+            "__LOCAL__": true
+        },
+        "pages": true,
+         "port": 4000,
+        "proxy": "http://127.0.0.1:3000"
+    }
+}
