@@ -1,55 +1,52 @@
 require('./PageDemo.less');
+import Form from "react-jsonschema-form";
 
-const reactMixin = require('react-mixin');
+const schema = {
+  title: "Todo",
+  type: "object",
+  required: ["title"],
+  properties: {
+    title: {type: "string", title: "Title", default: "A new task"},
+    done: {type: "boolean", title: "Done?", default: false}
+  }
+};
 
-const Actions = require('./actions');
-const Store = require('./store');
+const uiSchema = {
+    title: {
+      "ui:widget": "textarea"
+    }
+}
 
-const { Table } = Uxcore;
+const formData = {
+  title: "First task",
+  done: true
+};
+
 
 class PageDemo extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            loaded: false,
-            content: {},
-            error: false
+
         };
     }
 
     componentDidMount() {
-        Actions.fetch({
-            workNo: '0001'
-        }, function(data) {
-            console.log(data);
-        });
+
     }
 
     render() {
-        let renderCell = (cellData, rowData) => {
-            return <span>{cellData}</span>
-        };
-        let tableProps = {
-            width: 900,
-            jsxdata: {
-                data: this.state.content.list
-            },
-            jsxcolumns: [
-                {dataKey: 'workNo', title: '工号', width: 300, render: renderCell},
-                {dataKey: 'name', title: '姓名', width: 300, render: renderCell},
-                {dataKey: 'nickName', title: '昵称', width: 300, render: renderCell}
-            ]
-        };
         return (
             <div className="page-demo">
-                <Table {...tableProps}/>
+                 <Form schema={schema}
+                    uiSchema={uiSchema}
+                    formData={formData} />
             </div>
         );
     }
 }
 
-reactMixin.onClass(PageDemo, Reflux.connect(Store));
 
 ReactDOM.render(<PageDemo/>, document.getElementById('App'));
 
