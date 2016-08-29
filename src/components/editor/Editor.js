@@ -1,33 +1,31 @@
-require('./RestFormEditor.less');
-import Editor from '../editor';
-import Browser from '../browser';
-class RestFormEditor extends React.Component {
+require('./Editor.less');
+import Creater from '../creater';
+import Updater from '../updater';
+class Editor extends React.Component {
 
-    static propTypes= {
+     static propTypes= {
         schema: React.PropTypes.object.isRequired,
         uiSchema: React.PropTypes.object,
         url: React.PropTypes.string,
-        keyField: React.PropTypes.string,
-        thumbView: React.PropTypes.any
+        keyField: React.PropTypes.string
     }
 
     constructor(props) {
         super(props);
         this.state = {
+            editor:"creater"  //默认是创建
         };
     }
 
     render() {
         let me = this;
-        const {schema,uiSchema,url,keyField,ThumbView}=this.props;
+        const {editor}=this.state;
+        const {schema,uiSchema,url,keyField}=this.props;
         return (
-            <div className="rest_form_editor">
-                <Editor schema={schema}
-                    uiSchema={uiSchema}
-                    url={url}
-                    keyField={keyField}/>
-                <Browser url={url}
-                    thumbView={ThumbView}/>
+            <div className="editor">
+                {editor=="creater"?
+                <Creater schema={schema} uiSchema={uiSchema} url={url} />:
+                <Updater schema={schema} uiSchema={uiSchema} url={url} keyField={keyField}/>}
             </div>
         );
     }
@@ -55,4 +53,4 @@ class RestFormEditor extends React.Component {
     }
 }
 
-module.exports = RestFormEditor;
+module.exports = Editor;

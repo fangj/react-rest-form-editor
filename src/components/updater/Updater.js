@@ -1,14 +1,12 @@
-require('./RestFormEditor.less');
-import Editor from '../editor';
-import Browser from '../browser';
-class RestFormEditor extends React.Component {
+require('./Updater.less');
+
+class Updater extends React.Component {
 
     static propTypes= {
         schema: React.PropTypes.object.isRequired,
         uiSchema: React.PropTypes.object,
         url: React.PropTypes.string,
-        keyField: React.PropTypes.string,
-        thumbView: React.PropTypes.any
+        keyField: React.PropTypes.string
     }
 
     constructor(props) {
@@ -19,15 +17,9 @@ class RestFormEditor extends React.Component {
 
     render() {
         let me = this;
-        const {schema,uiSchema,url,keyField,ThumbView}=this.props;
         return (
-            <div className="rest_form_editor">
-                <Editor schema={schema}
-                    uiSchema={uiSchema}
-                    url={url}
-                    keyField={keyField}/>
-                <Browser url={url}
-                    thumbView={ThumbView}/>
+            <div className="updater">
+                component updater
             </div>
         );
     }
@@ -55,4 +47,4 @@ class RestFormEditor extends React.Component {
     }
 }
 
-module.exports = RestFormEditor;
+module.exports = Updater;

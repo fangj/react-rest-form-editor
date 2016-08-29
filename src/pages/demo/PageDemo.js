@@ -17,11 +17,6 @@ const uiSchema = {
     }
 }
 
-const formData = {
-  title: "First task",
-  done: true
-};
-
 const ThumbView=(props)=><div>thumb</div>;
 
 class PageDemo extends React.Component {
@@ -42,10 +37,9 @@ class PageDemo extends React.Component {
             <div className="page-demo">
                  <RestFormEditor schema={schema}
                     uiSchema={uiSchema}
-                    formData={formData} 
-                    url="/post"
+                    url="/api/post"
                     keyField="_id"
-                    thumb={ThumbView}/>
+                    thumbView={ThumbView}/>
             </div>
         );
     }
