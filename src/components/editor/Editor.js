@@ -1,4 +1,4 @@
-require('./Editor.less');
+// require('./Editor.less');
 import Creater from '../creater';
 import Updater from '../updater';
 import PubSub from 'pubsub-js';

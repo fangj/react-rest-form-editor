@@ -1,16 +1,17 @@
 {
   "name": "react-rest-form-editor",
   "author": "Fang Jian",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Form Editor for CRUD service",
-  "main": "./src/components/rest_form_editor",
+  "main": "./lib/components/rest_form_editor",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fangj/react-rest-form-editor.git"
   },
   "scripts": {
     "start": "nowa server",
-    "build": "nowa build"
+    "build": "nowa build",
+    "babel": "babel src -d lib"
   },
   "homepage": "https://github.com/fangj/react-rest-form-editor",
   "license": "MIT",
@@ -31,5 +32,12 @@
     "restful",
     "crud",
     "form"
-  ]
+  ],
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.13.0"
+  }
 }

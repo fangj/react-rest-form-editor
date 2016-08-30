@@ -1,4 +1,4 @@
-require('./Updater.less');
+// require('./Updater.less');
 import RestWriter from '../rest_writer';
 import Form from "react-jsonschema-form";
 import PubSub from 'pubsub-js';

@@ -1,4 +1,4 @@
-require('./RestFormEditor.less');
+// require('./RestFormEditor.less');
 import Editor from '../editor';
 import Browser from '../browser';
 class RestFormEditor extends React.Component {

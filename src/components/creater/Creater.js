@@ -1,4 +1,4 @@
-require('./Creater.less');
+// require('./Creater.less');
 import RestWriter from '../rest_writer';
 import Form from "react-jsonschema-form";
 import PubSub from 'pubsub-js';

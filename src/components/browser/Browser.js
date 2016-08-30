@@ -1,4 +1,4 @@
-require('./Browser.less');
+// require('./Browser.less');
 
 import RestReader from '../rest_reader';
 import PubSub from 'pubsub-js';
