@@ -1,17 +1,18 @@
 {
-  "name": "RestFormEditor",
+  "name": "react-rest-form-editor",
   "author": "Fang Jian",
   "version": "0.0.1",
   "description": "React Form Editor for CRUD service",
+  "main": "./src/components/rest_form_editor",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/fangj/react-rest-form-editor.git"
   },
   "scripts": {
     "start": "nowa server",
     "build": "nowa build"
   },
-  "homepage": "",
+  "homepage": "https://github.com/fangj/react-rest-form-editor",
   "license": "MIT",
   "dependencies": {
     "classnames": "~2.1.2",

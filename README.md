@@ -6,9 +6,10 @@ React Form Editor for CRUD service
 
 You have a CRUD service. I give you an editor UI.
 
+build form by react-jsonschema-form
+
 ```js
-import Form from "react-jsonschema-form";
-import RestFormEditor from '../../components/rest_form_editor';
+import RestFormEditor from 'react-rest-form-editor';
 const schema = {
   title: "Todo",
   type: "object",

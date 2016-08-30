@@ -1,5 +1,5 @@
 require('./PageDemo.less');
-import Form from "react-jsonschema-form";
+
 import RestFormEditor from '../../components/rest_form_editor';
 const schema = {
   title: "Todo",
