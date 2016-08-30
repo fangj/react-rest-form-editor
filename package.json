@@ -24,5 +24,12 @@
     "react-mixin": "~1.7.0",
     "superagent": "^2.2.0",
     "superagent-promise": "^1.1.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "restful",
+    "crud",
+    "form"
+  ]
 }
