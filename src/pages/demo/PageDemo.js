@@ -17,20 +17,10 @@ const uiSchema = {
     }
 }
 
-const ThumbView=(props)=><div>thumb</div>;
+
+const ThumbView=(props)=><div>{props.data?props.data.title:"新建"}</div>
 
 class PageDemo extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        };
-    }
-
-    componentDidMount() {
-
-    }
 
     render() {
         return (

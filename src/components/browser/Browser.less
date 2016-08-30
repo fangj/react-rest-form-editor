@@ -1,3 +1,26 @@
 .browser {
     // background-color: #f60;
+    .new,.old{
+    	width:100px;
+    	height: 100px;
+		text-align: center;
+		overflow: hidden;
+		margin:10px 10px 0 0;
+		float:left;
+    }
+    &:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }   
+    .new{
+    	background-color: lightgreen;
+    	&:hover{
+    		background-color: darkgreen;
+    		color:white;
+    	}
+    }
+    .old{
+    	background-color: lightblue;
+    	&:hover{
+    		background-color: darkblue;
+    		color:white;
+    	}
+    }
 }

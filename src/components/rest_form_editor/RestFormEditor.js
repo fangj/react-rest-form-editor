@@ -19,7 +19,7 @@ class RestFormEditor extends React.Component {
 
     render() {
         let me = this;
-        const {schema,uiSchema,url,keyField,ThumbView}=this.props;
+        const {schema,uiSchema,url,keyField,thumbView}=this.props;
         return (
             <div className="rest_form_editor">
                 <Editor schema={schema}
@@ -27,7 +27,7 @@ class RestFormEditor extends React.Component {
                     url={url}
                     keyField={keyField}/>
                 <Browser url={url}
-                    thumbView={ThumbView}
+                    thumbView={thumbView}
                     keyField={keyField}/>
             </div>
         );
