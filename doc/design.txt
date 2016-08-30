@@ -1,0 +1,7 @@
+* Editor 负责修改
+* Browser 负责查看
+
+依赖PubSub发布接收事件
+
+Editor完成修改后发出updated事件，通知Browser更新
+Browser中的项目被点击后发出create或者update事件，通知Editor切换为响应的Creater或Updater

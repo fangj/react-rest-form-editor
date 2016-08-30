@@ -1,6 +1,8 @@
 require('./Editor.less');
 import Creater from '../creater';
 import Updater from '../updater';
+import PubSub from 'pubsub-js';
+
 class Editor extends React.Component {
 
      static propTypes= {
@@ -19,13 +21,13 @@ class Editor extends React.Component {
 
     render() {
         let me = this;
-        const {editor}=this.state;
+        const {editor,id}=this.state;
         const {schema,uiSchema,url,keyField}=this.props;
         return (
             <div className="editor">
                 {editor=="creater"?
-                <Creater schema={schema} uiSchema={uiSchema} url={url} />:
-                <Updater schema={schema} uiSchema={uiSchema} url={url} keyField={keyField}/>}
+                <Creater schema={schema} uiSchema={uiSchema} url={url} keyField={keyField}/>:
+                <Updater schema={schema} uiSchema={uiSchema} url={url} id={id}/>}
             </div>
         );
     }
@@ -34,6 +36,13 @@ class Editor extends React.Component {
     }
 
     componentDidMount() {
+        const me=this;
+        this.tokenCreate=PubSub.subscribe( "create",()=>{
+           me.setState({editor:"creater",id:null});
+        });
+        this.tokenUpdate=PubSub.subscribe( "update",(msg,id)=>{
+           me.setState({editor:"updater",id:id});
+        });
     }
 
     componentWillReceiveProps(nextProps) {
@@ -50,6 +59,8 @@ class Editor extends React.Component {
     }
 
     componentWillUnmount() {
+        PubSub.unsubscribe( this.tokenCreate );
+        PubSub.unsubscribe( this.tokenUpdate );
     }
 }
 

@@ -28,6 +28,7 @@ class RestWriter extends React.Component {
         const View=view;
         if(id){//更新或删除
             const {data}=this.state;
+            console.log('render',data)
             if(data===undefined){
                 return null;//等待异步取得数据
             }else{
@@ -117,19 +118,19 @@ class RestWriter extends React.Component {
         return agent.get(url+'/'+id).then(resp=>resp.body); 
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.fetchData(nextProps);
-    }
+
 
 
     componentWillMount() {
     }
 
     componentDidMount() {
+        console.log('componentDidMount')
         this.fetchData(this.props);
     }
-
     componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps')
+        this.fetchData(nextProps);
     }
 
     shouldComponentUpdate(nextProps, nextState) {

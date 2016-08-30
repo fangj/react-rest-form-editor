@@ -1,13 +1,15 @@
 require('./Creater.less');
 import RestWriter from '../rest_writer';
 import Form from "react-jsonschema-form";
+import PubSub from 'pubsub-js';
 
 class Creater extends React.Component {
 
      static propTypes= {
         schema: React.PropTypes.object.isRequired,
         uiSchema: React.PropTypes.object,
-        url: React.PropTypes.string
+        url: React.PropTypes.string,
+        keyField: React.PropTypes.string
     }
 
     constructor(props) {
@@ -18,8 +20,9 @@ class Creater extends React.Component {
 
     render() {
         let me = this;
-        const {schema,uiSchema,url}=this.props;
-        const form=(props)=><Form schema={schema} uiSchema={uiSchema} onSubmit={({formData})=>props.save(formData)}>
+        const {schema,uiSchema,url,keyField}=this.props;
+        const form=(props)=><Form schema={schema} uiSchema={uiSchema} 
+                onSubmit={({formData})=>props.save(formData).then(d=>{PubSub.publish('updated');PubSub.publish('update',d[keyField]);})}>
                     <button type="submit" className="btn btn-success">保存</button>
                     </Form>
 

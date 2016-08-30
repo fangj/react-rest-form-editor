@@ -62,9 +62,9 @@ class RestReader extends React.Component {
           .catch((reason) => {
             //console.log('isCanceled', reason.isCanceled);
             if(!reason.isCanceled){
-                console.log('catch',reason)
+                // console.log('catch',reason)
                 // Promise.reject(reason);
-                
+                throw reason;
             }
       });
     }

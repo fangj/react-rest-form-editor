@@ -27,7 +27,8 @@ class RestFormEditor extends React.Component {
                     url={url}
                     keyField={keyField}/>
                 <Browser url={url}
-                    thumbView={ThumbView}/>
+                    thumbView={ThumbView}
+                    keyField={keyField}/>
             </div>
         );
     }
